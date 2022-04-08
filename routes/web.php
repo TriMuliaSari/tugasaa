@@ -28,3 +28,6 @@ Route::get('/coba/{no}', function ($no) {
 
 Route::get('/test', [CobaController::class, 'index']); 
 Route::get('/test/{ke}', [CobaController::class, 'urutan']);
+
+
+////ini komentar
