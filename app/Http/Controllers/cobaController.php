@@ -21,10 +21,15 @@ class CobaController extends Controller
     {
         return view('coba',['ke' => $ke]);
     }
+
     public function friends()
     {
          $friends = Friends::paginate(3);
 
         return view('friend',compact('friends'));
+    }
+     public function create()
+    {
+        return view('create');
     }
 }

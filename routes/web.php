@@ -14,23 +14,19 @@ use App\Http\Controllers\CobaController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/coba', function () {
-    return view ('coba');
+    return view('coba');
 });
-
-Route::get('/coba/{no}', function ($no) {
-    return 'Coba ke- ' . $no;
-});
-
+Route::get('/coba/{no}', [CobaController::class, 'coba']); 
 Route::get('/test', [CobaController::class, 'index']); 
 Route::get('/test/{ke}', [CobaController::class, 'urutan']);
 
-Route::get('/friends', [CobaController::class, 'friends']);
+*/
 
-
-
-////ini komentar
+Route::get('', [CobaController::class, 'index']);
+Route::get('/friends', [CobaController::class, 'index']);
+Route::get('/friends/create', [CobaController::class, 'create']);
