@@ -18,6 +18,7 @@
         <h3>No Tlp - </h3>
         <h3>Alamat - </h3>
 @endforeach
+<div>
         {{ $friends->links() }}
-
+</div>
 @endsection
