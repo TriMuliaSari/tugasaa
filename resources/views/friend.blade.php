@@ -4,8 +4,10 @@
 
 @section('content')
 @foreach($friends as $friend)
-        <h1>Urutan ke - {{$friend['ke']}}</h1>
-        <h3>Nomor ke - {{$friend['nomor']}}</h3>
+        <h1>Nama - {{$friend['nama']}}</h1>
+        <h3>No Tlp - {{$friend['no_tlp']}}</h3>
+        <h3>Alamat - {{$friend['alamat']}}</h3>
 @endforeach
+        {{ $friends->links() }}
 
 @endsection

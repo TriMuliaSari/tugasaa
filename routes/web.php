@@ -29,5 +29,8 @@ Route::get('/coba/{no}', function ($no) {
 Route::get('/test', [CobaController::class, 'index']); 
 Route::get('/test/{ke}', [CobaController::class, 'urutan']);
 
+Route::get('/friends', [CobaController::class, 'friends']);
+
+
 
 ////ini komentar
