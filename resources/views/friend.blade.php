@@ -4,9 +4,19 @@
 
 @section('content')
 @foreach($friends as $friend)
-        <h1>Nama - {{$friend['nama']}}</h1>
-        <h3>No Tlp - {{$friend['no_tlp']}}</h3>
-        <h3>Alamat - {{$friend['alamat']}}</h3>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{$friend['nama']}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{$friend['no_tlp']}}</h6>
+    <p class="card-text">{{$friend['alamat']}}</p>
+    <a href="#" class="card-link btn-warning">Edit Teman</a>
+    <a href="#" class="card-link btn-danger">Delete Teman</a>
+  </div>
+</div>
+        <h1>Nama - </h1>
+        <h3>No Tlp - </h3>
+        <h3>Alamat - </h3>
 @endforeach
         {{ $friends->links() }}
 
