@@ -14,7 +14,7 @@ use App\Http\Controllers\CobaController;
 |
 */
 
-
+Route::get('', [CobaController::class, 'index']);
 Route::get('/friends', [CobaController::class, 'index']);
 Route::get('/friends/create', [CobaController::class, 'create']);
-Route::get('/friends/store', [CobaController::class, 'store']);
+Route::post('/friends', [CobaController::class, 'store']);

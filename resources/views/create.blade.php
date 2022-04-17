@@ -4,9 +4,10 @@
 
 @section('content')
 <form action="/friends" method="POST">
+
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nama</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name:"nama" aria-describedby="emailHelp">
+    <input type="text" class="form-control" id="exampleInputEmail1" name:"nama" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">No Telpon</label>
