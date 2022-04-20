@@ -11,12 +11,12 @@ class CobaController extends Controller
 
         $friends = \App\Models\Friends::paginate(3);
 
-        return view('index', compact('friends'));
+        return view('friends.index', compact('friends'));
     }
     public function create()
     {
         
-        return view('create');
+        return view('friends.create');
     }
     public function store(Request $request)
     {
@@ -29,5 +29,7 @@ class CobaController extends Controller
         $friends->alamat = $request->alamat;
  
         $friends->save();
+
+        return redirect('/');
     }
 }
