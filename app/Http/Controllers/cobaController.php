@@ -21,6 +21,11 @@ class CobaController extends Controller
     public function store(Request $request)
     {
         // Validate the request...
+        $request->validate([
+    'nama' => 'required|unique:friends|max:255',
+    'no_tlp' => 'required|numeric',
+    'alamat' => 'nullable',
+    ]);
 
         $request->validate([
             'nama' => 'required|unique:friends|max:255',
@@ -43,5 +48,19 @@ class CobaController extends Controller
     {
         $friends = friends::where('id', $id)->first();
         return view('friends.show', ['friend'=> $friends]);
+    }
+    
+    public function edit($id)
+    {
+        $friends = friends::where('id', $id)->first();
+        return view('friends.edit', ['friend'=> $friends]);
+    }
+    public function update(Request $request, $id)
+    {
+        Friends::find('$id')->update([
+            'nama' =>$request->nama,
+            'no_tlp' =>$request->no_tlp,
+            'alamat' =>$request->alamat,
+        ])
     }
 }
