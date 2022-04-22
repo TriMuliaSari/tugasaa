@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Urutan')
+@section('title', 'Friends')
 
 @section('content')
 <form action ="/friends" method="POST">
@@ -14,8 +14,8 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">No Telp </label>
-    <input type="text" class="form-control" name="no_tlp" id="exampleInputPassword1" value="{{ old('no_elp') }}">
-    @error('no_telp')
+    <input type="text" class="form-control" name="no_tlp" id="exampleInputPassword1" value="{{ old('no_tlp') }}">
+    @error('no_tlp')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
