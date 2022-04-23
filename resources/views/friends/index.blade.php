@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Urutan')
+@section('title', 'Friends')
 
 @section('content')
-@foreach($friends as $friend)
+
+@foreach ($friends as $friend)
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -17,11 +18,13 @@
     <button class="card-link btn-danger">Delete Teman</a>
     </form>
   </div>
-        <h1>Nama - </h1>
-        <h3>No Tlp - </h3>
-        <h3>Alamat - </h3>
+</div>
+
 @endforeach
+
 <div>
-        {{ $friends->links() }}
+{{$friends-> links() }}
 </div>
 @endsection
+
+
