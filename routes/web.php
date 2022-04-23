@@ -14,6 +14,18 @@ use App\Http\Controllers\CobaController;
 |
 */
 
+/*Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/coba', function () {
+    return view('coba');
+});
+Route::get('/coba/{no}', [CobaController::class, 'coba']); 
+Route::get('/test', [CobaController::class, 'index']); 
+Route::get('/test/{ke}', [CobaController::class, 'urutan']);
+
+*/
 
 Route::get('', [CobaController::class, 'index']);
 Route::get('/friends', [CobaController::class, 'index']);
@@ -22,4 +34,4 @@ Route::post('/friends', [CobaController::class, 'store']);
 Route::get('/friends/{id}', [CobaController::class, 'show']);
 Route::get('/friends/{id}/edit', [CobaController::class, 'edit']);
 Route::put('/friends/{id}', [CobaController::class, 'update']);
-Route::delete('/friends/{id}', [CobaController::class, 'destroy']);
+Route::delete('/friends/{id}', [CobaController::class, 'destroy']); 
