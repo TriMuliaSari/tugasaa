@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '$group')
+<!-- @section('title', 'Groups') -->
 
 @section('content')
-
+<a href="/groups/create" class="card-link btn-primary">Tambah Group</a>
 @foreach ($groups as $group)
 
 <div class="card" style="width: 18rem;">
