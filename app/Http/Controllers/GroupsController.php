@@ -25,7 +25,7 @@ class GroupsController extends Controller
      */
     public function create()
     {
-        //
+     return view ('groups.create');
     }
 
     /**
@@ -36,7 +36,20 @@ class GroupsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'Name' => 'required|max:255',
+            'Description' => 'required',
+        ]);
+ 
+        $groups = new Groups;
+ 
+        $groups->name = $request->name;
+        $groups->description = $request->description;
+ 
+        $groups->save();
+
+        return redirect('/groups');
     }
 
     /**
@@ -47,7 +60,9 @@ class GroupsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $group = Groups::where('id', $id)->first();
+        return view('groups.show', ['group'=> $groups]);
     }
 
     /**
@@ -57,8 +72,9 @@ class GroupsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    { 
+        $groups = Groups::where('id', $id)->first();
+        return view('groups.edit', ['group'=> $groups]);
     }
 
     /**
@@ -70,7 +86,17 @@ class GroupsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+        ]);
+ 
+        groups::find($id)->update([
+            'name' => $request->name,
+            'description' => $request->description
+        ]);
+
+        return redirect('/groups');
     }
 
     /**
@@ -81,6 +107,8 @@ class GroupsController extends Controller
      */
     public function destroy($id)
     {
-        //
+    
+        Groups::find($id)->delete();
+        return redirect('/groups');
     }
 }
