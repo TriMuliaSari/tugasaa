@@ -11,8 +11,8 @@ class Groups extends Model
 
     protected $guarded = ['Name'];
 
-    public function group()
+    public function friends()
 {
-	return $this->hasMany('App\Models\Groups');
+	return $this->hasMany('App\Models\friends');
 }
 }

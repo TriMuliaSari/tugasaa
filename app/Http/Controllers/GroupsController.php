@@ -38,8 +38,8 @@ class GroupsController extends Controller
     {
 
         $request->validate([
-            'Name' => 'required|max:255',
-            'Description' => 'required',
+            'name' => 'required|max:255',
+            'description' => 'required',
         ]);
  
         $groups = new Groups;
@@ -62,7 +62,7 @@ class GroupsController extends Controller
     {
         
         $group = Groups::where('id', $id)->first();
-        return view('groups.show', ['group'=> $groups]);
+        return view('groups.show', ['group'=> $group]);
     }
 
     /**
