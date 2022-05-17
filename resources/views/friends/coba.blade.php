@@ -3,5 +3,8 @@
 @section('title', 'Coba')
 
 @section('content')
-        Urutan ke - {{$ke}}
+    Urutan ke - {{$ke}}
 @endsection
+
+
+

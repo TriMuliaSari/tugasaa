@@ -14,8 +14,8 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">No Telp </label>
-    <input type="text" class="form-control" name="no_tlp" id="exampleInputPassword1" value="{{ old('no_tlp') }}">
-    @error('no_tlp')
+    <input type="text" class="form-control" name="no_telp" id="exampleInputPassword1" value="{{ old('no_telp') }}">
+    @error('no_telp')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>

@@ -1,8 +1,7 @@
 <?php
-
+use App\Http\Controllers\GroupsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CobaController;
-use App\Http\Controllers\GroupsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +21,14 @@ use App\Http\Controllers\GroupsController;
 Route::get('/coba', function () {
     return view('coba');
 });
-Route::get('/coba/{no}', [CobaController::class, 'coba']); 
 Route::get('/test', [CobaController::class, 'index']); 
 Route::get('/test/{ke}', [CobaController::class, 'urutan']);
 
 */
 
+Route::get('groups/createmember/{id}', [GroupsController::class, 'createmember']); 
+Route::get('groups/deletemember/{id}', [GroupsController::class, 'deletemember']); 
+Route::post('groups/storemember/{id}', [GroupsController::class, 'storemember']); 
 Route::get('', [CobaController::class, 'index']);
 // Route::get('/friends', [CobaController::class, 'index']);
 // Route::get('/friends/create', [CobaController::class, 'create']);
@@ -35,8 +36,7 @@ Route::get('', [CobaController::class, 'index']);
 // Route::get('/friends/{id}', [CobaController::class, 'show']);
 // Route::get('/friends/{id}/edit', [CobaController::class, 'edit']);
 // Route::put('/friends/{id}', [CobaController::class, 'update']);
-// Route::delete('/friends/{id}', [CobaController::class, 'destroy']); 
-
+// Route::delete('/friends/{id}', [CobaController::class, 'destroy']);
 
 Route::resources([
     'friends' => CobaController::class,
