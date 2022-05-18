@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
 
-  <a href="/friends/create" class="btn btn-primary btn-sm mb-2"><i class="fas fa-plus"></i> Tambah Teman</a>
+  <a href="/friends/create" class="btn btn-outline-info"><i class="fas fa-plus"></i> Tambah Teman</a>
 
   <div class="row">
 
@@ -13,14 +13,14 @@
   <div class="col-lg-3">
     <div class="card" style="width: 17rem;">
       <div class="card-body">
-        <a href="/friends/{{ $friend['id']}}"class="card-title">{{ $friend['nama'] }}</a>
-        <h6 class="card-subtitle mb-2 text-muted">{{ $friend['no_telp'] }}</h6>
+      <center> <h3>  <a href="/friends/{{ $friend['id']}}"class="card-title">{{ $friend['nama'] }}</a> </h3></center>
+       <h3> <h6 class="card-subtitle mb-2 text-muted">{{ $friend['no_telp'] }}</h6> </h3>
         <p class="card-text">{{ $friend['alamat'] }}</p>
-    <a href="/friends/{{$friend['id']}}/edit" class="card-link btn-warning">Edit Teman</a>
-    <form action="/friends/{{$friend['id']}}" method="POST">
+     <center> <a href="/friends/{{$friend['id']}}/edit" class="btn btn-outline-success">Edit Teman</a></center>
+     <form action="/friends/{{$friend['id']}}" method="POST">
       @csrf
       @method('DELETE')
-      <button class="card-link btn-danger">Delete Teman</a>
+    <center>  <button class="btn btn-outline-darkr">Delete Teman</a> </center>
       </form>
   </div>
 </div>

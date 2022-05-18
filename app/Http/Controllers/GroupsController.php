@@ -135,7 +135,7 @@ class GroupsController extends Controller
             'description' => 'required',
         ]);
  
-        groups::find($id)->update([
+        Groups::where('id',$id)->update([
             'name' => $request->name,
             'description' => $request->description
         ]);

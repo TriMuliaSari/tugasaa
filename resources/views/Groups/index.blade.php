@@ -3,7 +3,7 @@
 @section('title', 'Groups')
 
 @section('content')
-<a href="/groups/create" class="btn btn-primary mb-2 btn-sm"><i class="fas fa-plus"></i> Tambah Group</a>
+<a href="/groups/create" class="btn btn-info"><i class="fas fa-plus"></i> Tambah Group</a>
 <div class="row">
     
   
@@ -12,14 +12,14 @@
   
 <div class="card" style="width: 17rem;">
   <div class="card-body">
-    <a href="/groups/{{ $group['id']}}"class="card-title">{{ $group['name'] }}</a>
-    <p class="card-text">{{ $group['description'] }}</p>
+<center> <h3>  <a href="/groups/{{ $group['id']}}"class="card-title">{{ $group['name'] }}</a> </h3> </center>
+   <p class="card-text">{{ $group['description'] }}</p>
   <hr>
-  <a href="{{url('groups/createmember/'. $group['id'])}}" class="card-link btn-primary">Tambah Anggota</a>
+ <center><a href="{{url('groups/createmember/'. $group['id'])}}" class="btn btn-info">Tambah Anggota</a></center>
 
 @foreach ($group->member_groups as $friend)
 @if ($friend->status == 1)
-  <li class="mt-2"> {{$friend->friends->nama}} | <a href="{{url('groups/deletemember/'. $friend->id)}}" class="btn btn-warning btn-sm text-white">hapus</a></li>  
+  <li class="mt-2"> {{$friend->friends->nama}} | <a href="{{url('groups/deletemember/'. $friend->id)}}" class="btn btn-dark">hapus</a></li>  
 @endif
 @endforeach
 @php
@@ -34,11 +34,11 @@
 
 
   <hr>
-    <a href="/groups/{{$group['id']}}/edit" class="card-link btn-warning">Edit Group</a>
+   <center> <a href="/groups/{{$group['id']}}/edit" class="btn btn-success">Edit Group</a> </center>
     <form action="/groups/{{$group['id']}}" method="POST">
       @csrf
       @method('DELETE')
-    <button class="card-link btn-danger">Delete Group</a>
+   <center><button class="btn btn-dark">Delete Group</a></center>
     </form>
   </div>
 </div>
